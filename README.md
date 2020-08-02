@@ -1,6 +1,6 @@
 # Cards
 
-**TODO: Add description**
+💧 Testing the Elixir language
 
 ## Installation
 
