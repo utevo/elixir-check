@@ -2,7 +2,7 @@ defmodule Cards do
   @moduledoc """
   Documentation for `Cards`.
   """
-  def create do
+  def create_deck do
     values = ["Ace", "Two", "Three", "Four", "Five"]
     suits = ["Spades", "Clubs", "Hearts", "Diamonds"]
 
@@ -29,5 +29,11 @@ defmodule Cards do
   def load(path) do
     {:ok, binary} = File.read(path)
     :erlang.binary_to_term(binary)
+  end
+
+  def create_hand(hand_size) do
+    Cards.create_deck
+    |> Cards.shuffle
+    |> Cards.deal(hand_size)
   end
 end
